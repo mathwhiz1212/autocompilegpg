@@ -38,7 +38,7 @@ case $response in
         #Prints version and asks user if it is the right version.
         clear
         gpg --version
-        read -p "Please make sure the installed version of GnuPG at the top of the information that just appeared is GnuPG 1.4.19 then hit enter." response
+        read -p "Please make sure the installed version of GnuPG displayed at the top of the terminal window is GnuPG 1.4.19 then hit enter." response
 
         #Cleans up.
         cd ..
@@ -64,7 +64,7 @@ case $response in
         #Prints version and asks user if it is the right version. 
         clear
         gpg --version
-        read -p "Please make sure the installed version of GnuPG at the top of the information that just appeared is GnuPG 1.4.19 then hit enter." response
+        read -p "Please make sure the installed version of GnuPG displayed at the top of the terminal window is GnuPG 1.4.19 then hit enter." response
 
         #Cleans up.
         cd ..
