@@ -16,24 +16,29 @@ wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2
 read -r -p "Do you have gpg installed? [y/n] " response
 case $response in
     [yY][eE][sS]|[yY]) 
-        #Attempts to Download and import key to verify the integrity of the files
+        #Attempts to download and import key needed to verify the integrity of the files
         gpg --keyserver keys.gnupg.net --recv-keys 4F25E3B6 
-        echo "Check if this key matches what it says on the webpage."
+        echo "Please check if this key matches what it says on the webpage."
         sleep 3
         firefox https://www.gnupg.org/signature_key.html </dev/null &>/dev/null &
         read -p "Then hit enter" response
 
-        #Attempts to Download signature to verify the integrity of the files.
+        #Attempts to download signature and to verify the integrity of the files.
         wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2.sig
         gpg --verify gnupg-1.4.19.tar.bz2.sig gnupg-1.4.19.tar.bz2
         sleep 7
+
+        #Extracts and compiles GnuPG.
         tar -xvjf gnupg-1.4.19.tar.bz2
         cd gnupg-1.4.19
         ./configure
         make 
         sudo make install 
-        gnome-terminal -e "bash -c \"gpg --version && sleep 30 \""
-        read -p "Please make sure the installed version of GnuPG at the top of the page in the terminal window that just appeared is GnuPG 1.4.19 then hit enter." response
+
+        #Prints version and asks user if it is the right version.
+        clear
+        gpg --version
+        read -p "Please make sure the installed version of GnuPG at the top of the information that just appeared is GnuPG 1.4.19 then hit enter." response
 
         #Cleans up.
         cd ..
@@ -42,19 +47,24 @@ case $response in
         rm gnupg-1.4.19.tar.bz2.sig
         ;;
     *)
-        #Attempts to check with sha1sum
+        #Attempts to verify the integrity of the files with sha1sum.
         echo "Please check this webpage and see if the sha1 checksum for gnupg-1.4.19.tar.bz2 is the same as given here."
         sha1sum gnupg-1.4.19.tar.bz2
         sleep 3
         firefox https://www.gnupg.org/download/integrity_check.html  </dev/null &>/dev/null &
         read -p "Then hit enter" response
+
+        #Extracts and compiles GnuPG.
         tar -xvjf gnupg-1.4.19.tar.bz2
         cd gnupg-1.4.19
         ./configure
         make 
         sudo make install 
-        gnome-terminal -e "bash -c \"gpg --version && sleep 30 \""
-        read -p "Please make sure the installed version of GnuPG at the top of the page in the terminal window that just appeared is GnuPG 1.4.19 then hit enter." response
+        
+        #Prints version and asks user if it is the right version. 
+        clear
+        gpg --version
+        read -p "Please make sure the installed version of GnuPG at the top of the information that just appeared is GnuPG 1.4.19 then hit enter." response
 
         #Cleans up.
         cd ..
