@@ -3,9 +3,6 @@
 #This is free software: you are free to change and redistribute it.
 #There is NO WARRANTY, to the extent permitted by law.
 
-#I Wish I had a way of launching firefox without opening any new windows or any error messages, 
-#I had it open another window to it so the user wouldn't confuse those error messages with the install process.
-
 #Installs or upgrades to gnupg-1.4.19
 
 #Installs nessary software.
@@ -23,7 +20,7 @@ case $response in
         gpg --keyserver keys.gnupg.net --recv-keys 4F25E3B6 
         echo "Check if this key matches what it says on the webpage."
         sleep 3
-        gnome-terminal -e "bash -c \"firefox https://www.gnupg.org/signature_key.html \""
+        firefox https://www.gnupg.org/signature_key.html </dev/null &>/dev/null &
         read -p "Then hit enter" response
 
         #Attempts to Download signature to verify the integrity of the files.
@@ -49,7 +46,7 @@ case $response in
         echo "Please check this webpage and see if the sha1 checksum for gnupg-1.4.19.tar.bz2 is the same as given here."
         sha1sum gnupg-1.4.19.tar.bz2
         sleep 3
-        gnome-terminal -e "bash -c \"firefox https://www.gnupg.org/download/integrity_check.html \""
+        firefox https://www.gnupg.org/download/integrity_check.html  </dev/null &>/dev/null &
         read -p "Then hit enter" response
         tar -xvjf gnupg-1.4.19.tar.bz2
         cd gnupg-1.4.19
