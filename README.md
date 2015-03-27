@@ -1,7 +1,7 @@
 # simpleautocompilegpg
-Simple script that automatically downloads, verifies and compiles gnupg. 
+Simple script that automatically downloads, verifies and compiles GnuPG. 
 
-The current version installs/upgrades gpg to gpg V.1.4.19.
+The current version installs/upgrades GnuPG to GnuPG V.1.4.19.
 
 Currently this script requires: A debian based linux distro. A working internet connection, firefox and gpg or sha1sum.
 
