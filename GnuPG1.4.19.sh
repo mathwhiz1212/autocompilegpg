@@ -3,7 +3,8 @@
 #This is free software: you are free to change and redistribute it.
 #There is NO WARRANTY, to the extent permitted by law.
 
-#I Wish I had a way of launching firefox without opening any new windows or any error messages, I had it open another window to it so the user wouldn't confuse those error messages with the install process.
+#I Wish I had a way of launching firefox without opening any new windows or any error messages, 
+#I had it open another window to it so the user wouldn't confuse those error messages with the install process.
 
 #Installs or upgrades to gnupg-1.4.19
 
