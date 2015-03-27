@@ -9,4 +9,6 @@ This script should work on most debian based distros, with a little modification
 
 This script has been tested to work on Linux mint.
 
+Currently looking for a way to launch firefox in a terminal without any error messages or opening any new terminal windows.
+
 Feel free to offer suggestions.
