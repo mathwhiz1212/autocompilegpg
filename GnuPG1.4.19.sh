@@ -9,11 +9,11 @@
 sudo apt-get update
 sudo apt-get install build-essential -y
 
-#Download install files.
+#Downloads install files.
 wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2
 
 #Asks user if they have installed gpg.
-read -r -p "Do you have a trusted gpg installed? [y/n] " response
+read -r -p "Do you have a trusted version of GnuPG installed? [y/n] " response
 case $response in
     [yY][eE][sS]|[yY]) 
         #Attempts to download and import key needed to verify the integrity of the files
@@ -35,7 +35,7 @@ case $response in
         make 
         sudo make install 
 
-        #Prints version and asks user if it is the right version.
+        #Prints version of GnuPG and asks user if it is the right version.
         clear
         gpg --version
         read -p "Please make sure the installed version of GnuPG displayed at the top of the terminal window is GnuPG 1.4.19 then hit enter." response
