@@ -3,9 +3,9 @@
 #This is free software: you are free to change and redistribute it.
 #There is NO WARRANTY, to the extent permitted by law.
 
-#This scirpt installs GnuPG-1.4.19 or upgrades current version to GnuPG-1.4.19.
+#This script installs GnuPG-1.4.19 or upgrades current version to GnuPG-1.4.19.
 
-#Installs nessary software.
+#Installs necessary software.
 sudo apt-get update
 sudo apt-get install build-essential -y
 
@@ -21,12 +21,6 @@ case $response in
         gpg --keyserver keys.gnupg.net --recv-keys E0856959
         gpg --keyserver keys.gnupg.net --recv-keys 33BD3F06
         gpg --keyserver keys.gnupg.net --recv-keys 7EFD60D9
-        
-        #I don't know if this is neccessary.
-        echo "Please check if these keys matches what it says on the webpage."
-        sleep 3
-        firefox https://www.gnupg.org/signature_key.html </dev/null &>/dev/null &
-        read -p "Then hit enter" response
 
         #Attempts to download signature and to verify the integrity of the files.
         wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2.sig
@@ -40,7 +34,7 @@ case $response in
         make 
         sudo make install 
 
-        #Prints version of GnuPG and asks user if it is the right version.
+        #Prints version of GnuPG and asks user if it is GnuPG 1.4.19.
         clear
         gpg --version
         read -p "Please make sure the installed version of GnuPG displayed at the top of the terminal window is GnuPG 1.4.19 then hit enter." response
@@ -66,7 +60,7 @@ case $response in
         make 
         sudo make install 
         
-        #Prints version and asks user if it is the right version. 
+        #Prints version and asks user if it is GnuPG 1.4.19. 
         clear
         gpg --version
         read -p "Please make sure the installed version of GnuPG displayed at the top of the terminal window is GnuPG 1.4.19 then hit enter." response
