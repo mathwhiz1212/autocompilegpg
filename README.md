@@ -9,4 +9,4 @@ Currently this script requires: A debian based linux distro with sudo installed 
 
 Please import my public key (key.txt) and verify the .sh file with the signature. e.g. gpg --import key.txt && gpg --verify GnuPG1.4.19.sh.sig GnuPG1.4.19.sh 
 
-This script has been tested to work on Linux mint.
+This script has been tested to work on Linux mint and Trisquel.
