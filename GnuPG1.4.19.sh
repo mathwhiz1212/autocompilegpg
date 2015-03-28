@@ -16,9 +16,14 @@ wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2
 read -r -p "Do you have a trusted version of GnuPG installed? [y/n] " response
 case $response in
     [yY][eE][sS]|[yY]) 
-        #Attempts to download and import key needed to verify the integrity of the files
+        #Attempts to download and import keys needed to verify the integrity of the files
         gpg --keyserver keys.gnupg.net --recv-keys 4F25E3B6 
-        echo "Please check if this key matches what it says on the webpage."
+        gpg --keyserver keys.gnupg.net --recv-keys E0856959
+        gpg --keyserver keys.gnupg.net --recv-keys 33BD3F06
+        gpg --keyserver keys.gnupg.net --recv-keys 7EFD60D9
+        
+        #I don't know if this is neccessary.
+        echo "Please check if these keys matches what it says on the webpage."
         sleep 3
         firefox https://www.gnupg.org/signature_key.html </dev/null &>/dev/null &
         read -p "Then hit enter" response
@@ -31,7 +36,7 @@ case $response in
         #Extracts and compiles GnuPG.
         tar -xvjf gnupg-1.4.19.tar.bz2
         cd gnupg-1.4.19
-        ./configure
+        ./configure --prefix=/usr
         make 
         sudo make install 
 
@@ -57,7 +62,7 @@ case $response in
         #Extracts and compiles GnuPG.
         tar -xvjf gnupg-1.4.19.tar.bz2
         cd gnupg-1.4.19
-        ./configure
+        ./configure --prefix=/usr
         make 
         sudo make install 
         
