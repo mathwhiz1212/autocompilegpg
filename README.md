@@ -1,5 +1,5 @@
 # simpleautocompilegpg
-Simple script that automatically downloads, verifies and compiles GnuPG. 
+Script that automatically downloads, verifies and compiles GnuPG. 
 
 This script installs GnuPG-1.4.19 or upgrades current version to GnuPG-1.4.19.
 
