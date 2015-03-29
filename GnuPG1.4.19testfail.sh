@@ -2,28 +2,33 @@
 #License GPLv3 GNU GPL version 3 <http://gnu.org/licenses/gpl.html>
 #This is free software: you are free to change and redistribute it.
 #There is NO WARRANTY, to the extent permitted by law.
+#foo)
+    #echo foo
+    #;&
 
 #This script installs GnuPG-1.4.19 or upgrades current version to GnuPG-1.4.19.
-case bacon in
-  foo)
-    echo foo
-    ;&
+read -r -p "Are you on an OS like debian where is sudo is not installed or properlly configured? [y/n]" response
+case $response in
+    [yY][eE][sS]|[yY]) 
+         case bacon in
+   # *) 
+    #;; 
+        ;;
+    *)          
+        ;;
+esac
 
-    *)
-    echo star
-    ;;
-
+ 
 bacon)
 
 #Installs necessary software.
 sudo apt-get update
 sudo apt-get install build-essential -y
-;&
-esac
 
 #Downloads install files.
 wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2
-
+;&
+esac
 #Asks user if they have installed gpg.
 read -r -p "Do you have a trusted version of GnuPG installed? [y/n] " response
 case $response in
