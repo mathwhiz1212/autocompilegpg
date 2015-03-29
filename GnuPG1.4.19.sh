@@ -4,10 +4,22 @@
 #There is NO WARRANTY, to the extent permitted by law.
 
 #This script installs GnuPG-1.4.19 or upgrades current version to GnuPG-1.4.19.
+case bacon in
+  foo)
+    echo foo
+    ;&
+
+    *)
+    echo star
+    ;;
+
+bacon)
 
 #Installs necessary software.
 sudo apt-get update
 sudo apt-get install build-essential -y
+;&
+esac
 
 #Downloads install files.
 wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2
