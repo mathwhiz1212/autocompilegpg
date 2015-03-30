@@ -14,3 +14,4 @@ Please import my public key (key.txt) and verify the .sh file with the signature
 You can also check the sha checksum with sha1sum e.g. sha1sum  GnuPG1.4.19.sh and compare it with .sha file.
 
 This script has been tested to work on Linux mint and Trisquel. For operating systems that do not have sudo installed please use the nosudo version of the script, you need to run the nosudo script as root for it to run successfully.
+
