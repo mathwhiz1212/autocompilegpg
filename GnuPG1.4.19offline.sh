@@ -7,7 +7,7 @@
 
 #Installs necessary software.
 cd debs
-dpkg -i *.deb
+sudo dpkg -i *.deb
 cd ..
 
 #Asks user if they have installed gpg.
