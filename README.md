@@ -13,4 +13,4 @@ This script has been tested to work on Linux mint and Trisquel. For operating sy
 
 In enviroments with unreliable or nonexistant internet please use the offline script found here: https://github.com/mathwhiz1212/autocompilegpg-offline
 
-This script is licensed under GPLv3 any software other than the script that may be included or used here you will have to look at the license(s) for that software. This version of the script uses GPG which is licensed under GPLv3+ and I am not aware of the licenses for the dependecies.
+This script is licensed under GPLv3, GnuPG is licensed under GPLv3+, gcc is licensed under GPLv3.
