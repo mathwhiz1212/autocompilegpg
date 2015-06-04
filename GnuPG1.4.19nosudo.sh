@@ -7,7 +7,7 @@
 
 #Installs necessary software.
 apt-get update
-apt-get install g++ -y
+apt-get install build-essential
 
 #Downloads install files.
 wget ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-1.4.19.tar.bz2
