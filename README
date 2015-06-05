@@ -9,7 +9,7 @@ Currently this script requires: A debian based linux distro, A working internet 
 
 Installation using sha1sum is the fastest and most user friendly. 
 
-Please check the sha checksum with sha1sum e.g. sha1sum GnuPG1.4.19.sh and compare it with .sha file.
+Please check the sha checksum with sha1sum e.g. sha1sum -c GnuPG1.4.19.sh.sha
 
 This script has been tested to work on Trisquel, linux mint and ubuntu. For operating systems that do not have sudo installed please use the nosudo version of the script, you need to run the nosudo script as root for it to run successfully.
 
