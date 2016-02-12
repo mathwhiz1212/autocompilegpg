@@ -1,4 +1,6 @@
 # autocompilegpg
+[This has been abandoned, if you want this to continue please make any issue on this repository or send me an email at theonlyanonymouspgrogrammer@gmail.com]
+
 Script that automatically downloads, verifies and compiles GnuPG. 
 
 This script downloads, verifies, compiles and installs GnuPG-1.4.19 or upgrades current version to GnuPG-1.4.19.
